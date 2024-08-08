@@ -24,30 +24,15 @@ function App() {
     <Header />
     <Banner image="home" />
     <Container>
-      <Category category={categories[0]}>
-      { filtercategory(0).map((video) => {
-          return <Card id={video.id} key={video.id}/> })}
-      </Category>
       
-      <Category category={categories[1]}>
-      { filtercategory(1).map((video) => {
+    {
+      categories.map((category, index)=> 
+        <Category category={category}>
+      {filtercategory(index).map((video) => {
           return <Card id={video.id} key={video.id}/> })}
       </Category>
-        
-      <Category category={categories[2]}>
-      { filtercategory(2).map((video) => {
-          return <Card id={video.id} key={video.id}/> })}
-      </Category>
-        
-      <Category category={categories[3]}>
-      { filtercategory(3).map((video) => {
-          return <Card id={video.id} key={video.id}/> })}
-      </Category>
-        
-      <Category category={categories[4]}>
-      { filtercategory(4).map((video) => {
-          return <Card id={video.id} key={video.id}/> })}
-      </Category>
+      )
+    }
 
     </Container>
     <Footer/>
