@@ -8,7 +8,8 @@ function AppRoutes(){
         <BrowserRouter> 
             <Routes>
                 <Route path='/' element={<Home/>}></Route>
-                <Route path='/watch' element={<Watch/>}></Route>
+                <Route path='/watch/:id' element={<Watch/>}></Route> 
+                {/* essa rota tem um parâmetro pois usa : + um nome em seguida */}
                 <Route path='*' element={<PageNotFound/>}></Route>
                 {/* o * é o seletor global. qualquer acesso a paginas que não sejam / ou /watch receberá a page not found */}
             </Routes>
