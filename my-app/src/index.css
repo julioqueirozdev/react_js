@@ -17,11 +17,19 @@ code {
     monospace;
 }
 
-/*Formatação Geral dos cards*/
+/* Formatação da barra de rolagem */
 
-.cards{
-  display: flex;
-  gap: 5px;
-  flex-wrap: wrap;
-  justify-content: center;
+body::-webkit-scrollbar{
+  width: 12px; /* largura da barra*/
+  background-color: #222;
+}
+
+body::-webkit-scrollbar-track{
+  background: #222; /*cor de fundo da barra*/
+}
+
+body::-webkit-scrollbar-thumb{
+  background-color: red; /*cor do scroll (thumb) da barra*/
+  border-radius: 20px; /*arredondar a barra*/
+  border: 3px solid #222; /*criar um espaço em volta do scroll*/
 }
