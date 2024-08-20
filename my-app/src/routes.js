@@ -3,6 +3,7 @@ import Home from './pages/Home';
 import Watch from './pages/Watch';
 import PageNotFound from './pages/PageNotFound';
 import Search from './pages/Search';
+import Favourites from './pages/Favourites';
 
 function AppRoutes(){
     return(
@@ -14,6 +15,7 @@ function AppRoutes(){
                 <Route path='*' element={<PageNotFound/>}></Route>
                 {/* o * é o seletor global. qualquer acesso a paginas que não sejam / ou /watch receberá a page not found */}
                 <Route path='/search' element={<Search/>}></Route>
+                <Route path='/favourites' element={<Favourites/>}></Route>
             </Routes>
         </BrowserRouter>
     );
