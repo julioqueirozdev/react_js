@@ -11,6 +11,7 @@ function Header(){
                 <Link to='/'>Home</Link>
                 <Link to='/search'>Buscar</Link>
                 <Link to='/favourites'>Favoritos</Link>
+                <Link to='/cadastre'>Cadastre</Link>
             </nav>   
         </header>
     );

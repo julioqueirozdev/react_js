@@ -5,6 +5,7 @@ import PageNotFound from "./pages/PageNotFound";
 import Search from "./pages/Search";
 import Favourites from "./pages/Favourites";
 import FavoritesProvider from "./contexts/Favorites";
+import VideoCadastre from "./pages/VideoCadastre";
 
 
 function AppRoutes() {
@@ -19,6 +20,7 @@ function AppRoutes() {
           {/* o * é o seletor global. qualquer acesso a paginas que não sejam / ou /watch receberá a page not found */}
           <Route path="/search" element={<Search />}></Route>
           <Route path="/favourites" element={<Favourites />}></Route>
+          <Route path="/cadastre" element={<VideoCadastre/>} ></Route>
         </Routes>
       </FavoritesProvider>
     </BrowserRouter>
