@@ -1,6 +1,7 @@
 import styles from "./SearchVideoList.module.css";
 import VideoList from '../../components/VideoList'
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import Loader from "../Loader";
 
 //filtrando videos por categoria ou titulo
 function filterVideos(videos, searchText){
@@ -10,9 +11,15 @@ function filterVideos(videos, searchText){
 
 function SearchVideoList( {videos} ){
     
-    const [ searchText, setSearchText ] = useState()
+    const [ searchText, setSearchText ] = useState('')
     const foundVideos = filterVideos(videos, searchText)
     
+    const [loading, setLoading] = useState(true)
+    useEffect(() => {
+        setTimeout(()=> setLoading(false), 500)
+    }, []) //estes efeitos vão ser executados na primeira vez que a rota for renderizada
+
+
     return(
         <section className= {styles.container}>
              < input 
@@ -21,10 +28,13 @@ function SearchVideoList( {videos} ){
                 value={searchText}
                 onChange={e => setSearchText(e.target.value)}
              />
-             <VideoList 
+            { //renderização condicional
+                loading ? <Loader/> :
+                <VideoList 
                 videos={foundVideos}
                 emptyHeading={`Sem vídeos sobre "${searchText}"`}
             />
+            }
         </section>
     );
 }
