@@ -1,8 +1,13 @@
-import styles from './Button.module.css';
+import './Button.css';
 
 function Button(){
+    function handleClick(){
+        alert('Você clicou no botão!')
+    }
+
+
     return(
-        <button className="button">Eu sou um botão!</button>
+        <button className='button' onClick={handleClick}>Eu sou um botão!</button>
     );
 }
 

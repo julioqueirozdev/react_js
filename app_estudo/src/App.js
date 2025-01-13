@@ -1,10 +1,16 @@
 import Button from "./components/Button";
+import List from "./components/List";
+import User from "./components/User";
+
+
+
 
 function App() {
   return (
     <div className="App">
-      <h1>Bem-vindo ao meu aplicativo!</h1>
+      <User/>
       <Button/>
+      <List/>
     </div>
   );
 }
