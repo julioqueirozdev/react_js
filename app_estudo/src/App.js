@@ -1,18 +1,26 @@
-import Button from "./components/Button";
-import List from "./components/List";
-import User from "./components/User";
+import { useState } from "react";
 
 
+export default function App(){
+  const [count, setCount] = useState(0);
 
+  function handleClick(){
+    setCount(count + 1)
+  }
 
-function App() {
-  return (
-    <div className="App">
-      <User/>
-      <Button/>
-      <List/>
+  return(
+    <div>
+      <h1>Contadores que são atualizados juntos</h1>
+      <MyButton count={count} onClick={handleClick}/>
+      <MyButton count={count} onClick={handleClick}/>
     </div>
   );
 }
 
-export default App;
+function MyButton({count, onClick}){
+  return(
+    <button onClick={onClick} >
+      Clicado {count} vezes
+    </button>
+  );
+}
