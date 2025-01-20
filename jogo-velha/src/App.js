@@ -52,7 +52,7 @@ function Board({xIsNext, squares, onPlay}){
             return renderSquare(index)           
           })}
         </div>
-      ))};
+      ))}
     </div>
     </>
   );
