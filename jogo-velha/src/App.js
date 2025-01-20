@@ -79,7 +79,7 @@ export default function Game(){
     let description;
     let actualMove;
     if (move > 0){
-      description = 'Go to move #' + (move - 1);
+      description = 'Go to move #' + move;
       actualMove = 'Você está no movimento # '+ move;
     } else{
       description = 'Go to game start';
